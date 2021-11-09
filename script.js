@@ -4,11 +4,15 @@ const time = document.querySelector(".time");
 const resetB = document.querySelector(".rbot");
 const saveB = document.querySelector(".bot");
 const noteDiv = document.querySelector(".notearea");
+
+
 resetB.addEventListener("click", function resetForm() {
   task.value = "";
   date.value = "";
   time.value = "";
 });
+
+
 if (!localStorage.getItem("saveData")) {
   localStorage.setItem("saveData", JSON.stringify(saveData));
 } else {
@@ -19,6 +23,20 @@ if (!localStorage.getItem("saveData")) {
     addNote(saveData[i].Title, saveData[i].Date, saveData[i].Time);
   }
 }
+
+
+saveB.addEventListener("click", function SaveForm() {
+  if (task.value == "" || date.value == "" || time.value == "") {
+    alert("Fill Everything!");
+  } else {
+    addNote(task.value, date.value, time.value);
+    saveData.push({ Title: task.value, Date: date.value, Time: time.value });
+    localStorage.setItem("saveData", JSON.stringify(saveData));
+    task.value = "";
+    date.value = "";
+    time.value = "";
+  }
+});
 
 function addNote(Title, Date, Time) {
   saveData = JSON.parse(localStorage.getItem("saveData"));
@@ -54,19 +72,6 @@ function addNote(Title, Date, Time) {
     }
   });
 }
-
-saveB.addEventListener("click", function SaveForm() {
-  if (task.value == "" || date.value == "" || time.value == "") {
-    alert("Fill Everything!");
-  } else {
-    addNote(task.value, date.value, time.value);
-    saveData.push({ Title: task.value, Date: date.value, Time: time.value });
-    localStorage.setItem("saveData", JSON.stringify(saveData));
-    task.value = "";
-    date.value = "";
-    time.value = "";
-  }
-});
 
 //CLock Function
 function clock() {
