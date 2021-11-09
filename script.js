@@ -47,8 +47,7 @@ function addNote(Title, Date, Time) {
   dltBut.addEventListener("click", function deleteNote(e) {
     e.target.parentElement.remove();
     for (let i = 0; i < saveData.length; i++) {
-      console.log(e.target.parentElement.querySelector("h2").textContent);
-      if (saveData[i].Title == e.target.parentElement.querySelector("h2").textContent) {
+      if (saveData[i].Title == e.target.parentElement.querySelector("h3").textContent) {
         saveData.splice(i, 1);
         localStorage.setItem("saveData", JSON.stringify(saveData));
       }
