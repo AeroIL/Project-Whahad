@@ -91,7 +91,7 @@ function clock() {
   } else if (day === 3 || day === 23) {
     day += "rd";
   } else {
-    day += "th";
+    day += "th"
   }
 
   // Convert month number into month name
