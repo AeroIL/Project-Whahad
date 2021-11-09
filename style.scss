@@ -1,0 +1,185 @@
+@mixin align {
+  display: flex;
+  justify-content: center;
+}
+@mixin inpcss {
+  color: black;
+  opacity: 0.8;
+  margin-left: 5vw;
+  height: 4vh;
+  width: 15vw;
+}
+@mixin botstyle {
+  height: 4vh;
+  width: 10vw;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+}
+body {
+  @include align();
+  background-image: url("https://c0.wallpaperflare.com/preview/583/150/491/cork-board-cork-board-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 30px;
+  position: absolute;
+  font-family: "Mochiy Pop One", sans-serif;
+  text-align: center;
+  color: aliceblue;
+  background-color: #058b05d7;
+  border: 7px #5e5e03 solid;
+  border-radius: 30%;
+  max-width: 30vh;
+}
+.form {
+  padding: 1vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4%;
+  height: 30vh;
+  width: 50vw;
+  background-image: url(/formbg.jpg);
+}
+
+//Input Boxes
+.txt {
+  @include inpcss();
+  margin-top: 1vh;
+  font-size: 16px;
+}
+.date {
+  @include inpcss();
+  margin-top: 1vh;
+  padding: 1%;
+  font-size: 16px;
+}
+.time {
+  @include inpcss();
+  margin-top: 1vh;
+  height: 5vh;
+  width: 10vw;
+  font-size: 16px;
+}
+::placeholder {
+  color: red;
+  opacity: 1;
+}
+
+.main {
+  margin-right: 76%;
+  margin-top: 5%;
+  display: grid;
+  place-items: Center;
+  min-height: 10vh;
+  font-size: 42px;
+  line-height: 1;
+  text-align: center;
+  color: white;
+  position: absolute;
+  background: #058b05d7;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem -0.5rem hsla(0, 0%, 0%, 0.2);
+  box-sizing: border-box;
+  border: solid 5px #5e5e03;
+  text-align: center;
+  width: 20vw;
+}
+
+#Clockdate {
+  font-family: "Mochiy Pop One", sans-serif;
+  opacity: 0.8;
+  text-shadow: 2px black;
+}
+
+#Clocktime {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+.bot {
+  position: absolute;
+  @include botstyle();
+  margin-top: 26vh;
+  margin-left: 5%;
+}
+.rbot {
+  @include botstyle();
+  position: absolute;
+  margin-top: 26vh;
+  margin-left: 33%;
+}
+.notearea {
+  position: absolute;
+  height: 50vh;
+  width: 90vw;
+  margin-top: 48vh;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.notebg {
+  background-image: url(/notebg.png);
+  display: flex;
+  background-size: cover;
+  height: 35vh;
+  width: 13vw;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1vw;
+  animation: fadein 3s;
+}
+.upperDiv {
+  word-break: break-all;
+  margin-top: 5vh;
+  height: 25vh;
+  max-width: 12vw;
+  line-height: 2vh;
+  
+}
+.lowerDiv {
+  max-height: 10vh;
+  max-width: 13vw;
+  margin-bottom: 3vh;
+  flex-direction: row;
+  padding: 5px;
+}
+.bold {
+  border-bottom: black 2px solid;
+  font-size: 32px;
+}
+i {
+  position: absolute;
+  margin-left: 10vw;
+  margin-bottom: 25vh;
+  visibility: hidden;
+}
+.notebg:hover i {
+  visibility: visible;
+}
+.nTitle{
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  
+}
+.noteTitle{
+  margin-top: 1vh;
+  border: 1px solid black;
+  height: 20vh;
+  overflow-y: auto;
+  border-radius: 10%;
+  padding: 4px;
+}
